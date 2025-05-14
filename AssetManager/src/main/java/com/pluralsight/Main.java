@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        //arrayList of Asset object => vacation home and 2 vehicles  /myHouse,bilenieSuv
+        //create an arrayList to contain our Asset object => Houses and vehicles.
         ArrayList<Asset> assets = new ArrayList<>();
 //(String description, String dateAcquired, double originalCost, String makeModel, int year, int odometer)
         assets.add(new Vehicle("My Rav4 Car", "01/02/2025", 47000.00, "Toyota", 2025, 7000));

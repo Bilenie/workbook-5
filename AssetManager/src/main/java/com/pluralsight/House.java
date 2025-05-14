@@ -9,12 +9,12 @@ public class House extends Asset {
 
 
     //Methods: constructor
-    public House(String description, String dateAcquired, double originalCost, String address, int condition, int squarefoot, int lotSize) { //remove if not needed
+    public House(String description, String dateAcquired, double originalCost, String address, int condition, int squareFoot, int lotSize) { //remove if not needed
 
         super(description, dateAcquired, originalCost);
         this.address = address;
         this.condition = condition;
-        this.squareFoot = squarefoot;
+        this.squareFoot = squareFoot;
         this.lotSize = lotSize;
     }
 
