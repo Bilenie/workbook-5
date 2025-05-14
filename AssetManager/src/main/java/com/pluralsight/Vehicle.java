@@ -73,7 +73,7 @@ public class Vehicle extends Asset {
 
     @Override
     public String toString() {
-        return ", Make/Model: " + makeModel +
+        return super.toString() + ", Make/Model: " + makeModel +
                 ", Year: " + year ;
     }
 }
