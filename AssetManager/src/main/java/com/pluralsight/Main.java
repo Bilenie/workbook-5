@@ -27,7 +27,7 @@ public class Main {
             System.out.println(myAssets);
             System.out.println("**********************************************************");
 
-            pause(); // ← use method here
+            pause();
 
         }
         // Then loop through again the list & display (description of the object(  I will use toString method => address of house, year & make/mode of car.)
