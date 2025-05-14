@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         //arrayList of Asset object => vacation home and 2 vehicles  /myHouse,bilenieSuv
@@ -21,5 +23,6 @@ Vehicle vehicle = (Vehicle) myAssets.get(i);
 message = "Vehicle: " +
 vehicle.getYear() + " " + vehicle.getMakeModel();
 }*/
+        //ArrayList<Vehicle> myCar = ArrayList <>();
     }
 }

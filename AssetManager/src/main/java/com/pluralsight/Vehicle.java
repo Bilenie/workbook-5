@@ -1,5 +1,8 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 public class Vehicle extends Asset {
 
     // Properties of this class
@@ -9,26 +12,12 @@ public class Vehicle extends Asset {
 
 
     //Methods: constructor
-    public Vehicle(String description, String dateAcquired, double originalCost,String makeModel, int year, int odometer) {
+    public Vehicle(String description, String dateAcquired, double originalCost, String makeModel, int year, int odometer) {
         super(description, dateAcquired, originalCost);
 
         this.makeModel = makeModel;
         this.year = year;
         this.odometer = odometer;
-
-    }
-
-    //getValue() : double (override)
-    @Override
-    public double getValue() {
-/*
-// A car's value is determined as > list of cars
-// 0-3 years old - 3% reduced value of cost per year => if(year of vehicle >= 0 && vehicle year is <=3) value* 3%=>0.03)
-// 4-6 years old - 6% reduced value of cost per year => else if(year of vehicle >= 4 && vehicle year is <=6) value* 6%=>0.06)
-// 7-10 years old - 8% reduced value of cost per year => else if(year of vehicle >= 7 && vehicle year is <=10) value* 8%=>0.08)
-// over 10 years old - $1000.00 => else if( year of vehicle > 10) value  = 1000
-// MINUS reduce final value by 25% if over 100,000 miles= initialize miles to 0; and condition add  if (miles == 100,000){final value  = value * 0.25 if miles = 100,000}
-// unless makeModel contains word Honda or Toyota => list with a key honda or toyota = > loop and get vehicle that the key matches honda and toyota but list need to contain that */
 
     }
 
@@ -58,7 +47,27 @@ public class Vehicle extends Asset {
         this.odometer = odometer;
     }
 
+    //getValue() : double (override)
+    @Override
+    public double getValue() {
+        // know the currentYear = localDate.now.getYear() - year ; => age currentYear - this.year;
+        int currentYear = LocalDate.now().getYear();
+        int theCarYear = currentYear - this.year;
+        double value;
 
+        if (theCarYear >= 0 && theCarYear <= 3) {
+            value = this.originalCost - (this.originalCost * 0.03 * theCarYear);// reduce 3% from originalCost.
+        } else if (theCarYear >= 4 && theCarYear <= 6) {
+            value = this.originalCost - (this.originalCost * 0.06 * theCarYear); // reduce 6% per year from originalCost.
+        } else if (theCarYear >= 7 && theCarYear <= 10) {
+            value = this.originalCost - (this.originalCost * 0.08 * theCarYear); // reduce 8% per year from originalCost.
+        } else { // over 10 years old value of the care is
+            value = 1000.00;
+        }
+        if (this.odometer > 100000 && !(makeModel.toLowerCase().contains("honda") || makeModel.toLowerCase().contains("toyota"))) {
+            value -= value * 0.25; // reduce by 25% from original cost.
+        }
+        return value;
 
-
+    }
 }

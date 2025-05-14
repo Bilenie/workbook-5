@@ -18,20 +18,6 @@ public class House extends Asset {
         this.lotSize = lotSize;
     }
 
-    //@override getValue method
-    @Override
-    public double getValue() {
-/*
-getValue() : double (override)
-// A house's value is determined as
-// $180.00 per square foot (excellent)
-// $130.00 per square foot (good)
-// $90.00 per square foot (fair)
-// $80.00 per square foot (poor)
-// PLUS 25 cents per square foot of lot size
-*/
-
-    }
 
     // Generate getter and setter for this class attribute.
     public String getAddress() {
@@ -64,6 +50,27 @@ getValue() : double (override)
 
     public void setLotSize(int lotSize) {
         this.lotSize = lotSize;
+    }
+
+    //@override getValue method
+    @Override
+    public double getValue() {
+        double price;
+        switch (this.condition) {
+            case 1://excellent
+                price = 180.0;
+                break;
+            case 2:// good
+                price = 130.0;
+                break;
+            case 3://fair
+                price = 90.0;
+                break;
+            default://poor
+                price = 80.0;
+        }
+        return (this.squareFoot * price) + (this.lotSize * 0.25);// PLUS 25 cents per square foot of lot size
+
     }
 
 
