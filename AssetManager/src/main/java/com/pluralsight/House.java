@@ -73,5 +73,8 @@ public class House extends Asset {
 
     }
 
-
+    @Override
+    public String toString() {
+        return ", Address: " + address;
+    }
 }

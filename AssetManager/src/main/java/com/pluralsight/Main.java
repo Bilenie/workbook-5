@@ -15,22 +15,26 @@ public class Main {
         assets.add(new House("My Vacation House", "12/30/2028", 200500.0,"South Lake Texas" , 2, 1500 , 4000));
 
         //loop through the list display (description of the object(  I will use toString method => date acquired, price we paid, value of the vehicle & the house )
+        for(int i = 0 ; i< assets.size() ; i++){
+          Asset  myAssets = assets.get(i);
+            System.out.println(myAssets.toString());
+
+        }
         // Then loop through again the list & display (description of the object(  I will use toString method => address of house, year & make/mode of car.)
         // to identify the type of asset to know it its house or vehicle do instanceOf when looping => after knowing the type call a method of type(house / vehicle )
-/*
-can call the methods of the specific type.
-3-20
-Example
-String message = "";
-if (myAssets.get(i) instanceof House) {
-House house = (House) myAssets.get(i);
-message = "House at " + house.getAddress();
-}
-else if (myAssets.get(i) instanceof Vehicle) {
-Vehicle vehicle = (Vehicle) myAssets.get(i);
-message = "Vehicle: " +
-vehicle.getYear() + " " + vehicle.getMakeModel();
-}*/
+        for(int i = 0 ; i< assets.size() ; i++){
+            Asset  myAssets = assets.get(i);
+            System.out.println();
+
+            if (myAssets instanceof House) {
+                House house = (House) myAssets ;
+                System.out.println("House at: " + house.toString());
+            } else if (myAssets  instanceof Vehicle) {
+                Vehicle vehicle = (Vehicle) myAssets ;
+                System.out.println("Vehicle: " + vehicle.getYear() + " " + vehicle.getMakeModel());
+            }
+
+        }
 
     }
 }
