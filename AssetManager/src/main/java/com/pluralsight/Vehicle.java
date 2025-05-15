@@ -61,7 +61,7 @@ public class Vehicle extends Asset {
             value = this.originalCost - (this.originalCost * 0.06 * theCarYear); // reduce 6% per year from originalCost.
         } else if (theCarYear >= 7 && theCarYear <= 10) {
             value = this.originalCost - (this.originalCost * 0.08 * theCarYear); // reduce 8% per year from originalCost.
-        } else { // over 10 years old value of the care is
+        } else { // over 10 years old value of the car is
             value = 1000.00;
         }
         if (this.odometer > 100000 && !(makeModel.toLowerCase().contains("honda") || makeModel.toLowerCase().contains("toyota"))) {

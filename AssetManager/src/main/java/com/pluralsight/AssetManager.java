@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class AssetManager {
     public static void main(String[] args) {
         //create an arrayList to contain our Asset object => Houses and vehicles.
-        ArrayList<Asset> assets = new ArrayList<>();
+        ArrayList<Asset> assets = new ArrayList<>();//Asset is there because we want the list to contain the children.
 //(String description, String dateAcquired, double originalCost, String makeModel, int year, int odometer)
         assets.add(new Vehicle("My Rav4 Car", "01/02/2025", 47000.00, "Toyota", 2025, 7000));
         assets.add(new Vehicle("My Second Car", "04/05/2024", 35000.00, "Honda", 2024, 100000));
