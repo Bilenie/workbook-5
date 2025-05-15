@@ -18,7 +18,8 @@ public abstract class Asset {
     }
 
     //custom method for getValue() // return original cost and its double
-    public abstract double getValue();
+    public abstract double getValue();//Now it's abstract
+    // Forcing the children to override and implementing the method.
 
 //Generate getter and setter
 
