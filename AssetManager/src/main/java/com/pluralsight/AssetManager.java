@@ -4,7 +4,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class Main {
+public class AssetManager {
     public static void main(String[] args) {
         //create an arrayList to contain our Asset object => Houses and vehicles.
         ArrayList<Asset> assets = new ArrayList<>();
