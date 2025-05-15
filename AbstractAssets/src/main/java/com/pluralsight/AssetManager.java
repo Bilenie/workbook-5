@@ -52,7 +52,8 @@ public class AssetManager {
         }
 
     }
-//Asset myAsset =  new Asset();
+//Asset myAsset =  new Asset(); => was throwing error
+
     public static void pause() {
         try {
             Thread.sleep(2000); // Wait 2 seconds before showing the next
